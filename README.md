@@ -12,6 +12,9 @@ Simple Example for using webusb with arduino
 
     - create udev rule
     ```sudo gedit /etc/udev/rules.d/50-arduino-mini.rules``` and type
-    ```SUBSYSTEMS=="usb", ATTR{idVendor}=="1A86", MODE:="0666"```
+    ```SUBSYSTEMS=="usb", ATTR{idVendor}=="2341", MODE:="0666"```
     - [reload udev] ``` sudo udevadm control --reload-rules && udevadm trigger ```
 
+- [Failed to claim interface](https://stackoverflow.com/questions/47695160/failed-to-claim-interface-0-device-or-resource-busy)
+    - device and Linux will automatically load a kernel driver when it is connected that claims interface
+]
