@@ -35,9 +35,9 @@ and type
 
 3.  (re)plugin usb device and see 
 
-``` lsusb -d 2341:0043 ``` 
+``` lsusb -d 1a86:7523 ``` 
 
-Bus 003 Device 024: ID 2341:0043 Arduino SA Uno R3 (CDC ACM)
+Bus 003 Device 039: ID 1a86:7523 QinHeng Electronics HL-340 USB-Serial adapter
 
 for bus and device
 
@@ -48,3 +48,15 @@ for bus and device
 that it outputs user marcman and group marcman as owner. Done.
 
 
+5. find out the specifica of the usb device
+
+```for device in $(ls /sys/bus/usb/devices/*/product); do echo $device;cat $device;done```
+
+5. unbind the module driver
+
+```echo -n "3-2:1.0" > /sys/bus/usb/drivers/ch341/unbind```
+
+
+
+
+    
